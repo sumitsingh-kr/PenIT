@@ -7,7 +7,7 @@ from mtcnn.mtcnn import MTCNN
 app=Flask(__name__)
 
 detector = MTCNN()
-camera  = cv2.VideoCapture(0)
+camera  = cv2.VideoCapture(-1)
 
 csv_path_face = 'color5.xlsx'
 csv_path_hair = 'color6.xlsx'
