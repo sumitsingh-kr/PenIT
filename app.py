@@ -6,4 +6,4 @@ app = Flask(__name__)
 def index():
     return "Hello World!"
 if __name__=='__main__':
-    app.run(port='80')
+    app.run(debug = True,port='80')
