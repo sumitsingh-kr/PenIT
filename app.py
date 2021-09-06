@@ -62,7 +62,7 @@ def get_color_name_eye(R,G,B):
 #_______________________________________________________________________________________________________________________________
 
 def gen_frames():
-	camera  = cv2.VideoCapture(0)
+    camera  = cv2.VideoCapture(0)
 	
     while True:
         # read the camera frame
