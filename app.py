@@ -7,7 +7,7 @@ from mtcnn.mtcnn import MTCNN
 app=Flask(__name__)
 
 detector = MTCNN()
-camera  = cv2.VideoCapture(0)
+
 
 csv_path_face = 'color5.xlsx'
 csv_path_hair = 'color6.xlsx'
@@ -61,7 +61,9 @@ def get_color_name_eye(R,G,B):
     return cname
 #_______________________________________________________________________________________________________________________________
 
-def gen_frames():  
+def gen_frames():
+	camera  = cv2.VideoCapture(0)
+	
     while True:
         # read the camera frame
         success, frame = camera.read()  
