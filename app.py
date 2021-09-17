@@ -7,7 +7,7 @@ from mtcnn.mtcnn import MTCNN
 app=Flask(__name__)
 
 detector = MTCNN()
-camera  = cv2.VideoCapture(0)
+
 
 csv_path_face = 'color_face.xlsx'
 csv_path_hair = 'color_hair.xlsx'
@@ -61,7 +61,9 @@ def get_color_name_eye(R,G,B):
     return cname
 #_______________________________________________________________________________________________________________________________
 
-def gen_frames():  
+def gen_frames():
+    camera  = cv2.VideoCapture(0)
+	
     while True:
         # read the camera frame
         success, frame = camera.read()  
@@ -133,7 +135,7 @@ def gen_frames():
     camera.release()
     cv2.destroyAllWindows()
 #_____________________________________________________________________________________________________________________________________
-@app.route('/')
+@app.route('/detect')
 def index():
     return render_template('index.html')
 @app.route('/video_feed')
@@ -141,4 +143,4 @@ def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run()
