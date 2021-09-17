@@ -135,7 +135,7 @@ def gen_frames():
     camera.release()
     cv2.destroyAllWindows()
 #_____________________________________________________________________________________________________________________________________
-@app.route('/detect')
+@app.route('/')
 def index():
     return render_template('index.html')
 @app.route('/video_feed')
