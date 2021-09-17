@@ -135,6 +135,9 @@ def gen_frames():
     camera.release()
     cv2.destroyAllWindows()
 #_____________________________________________________________________________________________________________________________________
+@app.route('/')
+def hello():
+    return "Welcome to flask"
 @app.route('/detect')
 def index():
     return render_template('index.html')
